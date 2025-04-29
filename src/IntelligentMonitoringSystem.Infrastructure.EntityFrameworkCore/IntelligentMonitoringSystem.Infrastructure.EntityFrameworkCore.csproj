@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <!--引用解决方案公用项目配置-->
+    <PropertyGroup>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <Import Project="../../ProjectCommon.targets"/>
+    <ItemGroup>
+        <ProjectReference Include="..\IntelligentMonitoringSystem.Domain\IntelligentMonitoringSystem.Domain.csproj"/>
+        <ProjectReference Include="..\IntelligentMonitoringSystem.Infrastructure.Common\IntelligentMonitoringSystem.Infrastructure.Common.csproj"/>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Ardalis.SmartEnum.EFCore"/>
+        <PackageReference Include="Ardalis.Specification.EntityFrameworkCore"/>
+        <PackageReference Include="Microsoft.CodeAnalysis.RulesetToEditorconfigConverter"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design"/>
+        <PackageReference Include="Pomelo.EntityFrameworkCore.MySql"/>
+        <PackageReference Include="Pomelo.EntityFrameworkCore.MySql.Design"/>
+        <PackageReference Include="System.Net.Http"/>
+        <PackageReference Include="System.Text.Json"/>
+        <PackageReference Include="System.Text.RegularExpressions"/>
+    </ItemGroup>
+
+</Project>

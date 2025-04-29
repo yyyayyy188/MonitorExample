@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <!--引用解决方案公用项目配置-->
+    <PropertyGroup>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <Import Project="../../ProjectCommon.targets"/>
+
+    <ItemGroup>
+        <PackageReference Include="DotPulsar"/>
+        <PackageReference Include="Microsoft.CodeAnalysis.RulesetToEditorconfigConverter"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\IntelligentMonitoringSystem.Domain\IntelligentMonitoringSystem.Domain.csproj"/>
+    </ItemGroup>
+
+</Project>

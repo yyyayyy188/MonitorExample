@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <Import Project="../../ProjectCommon.targets"/>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.CodeAnalysis.RulesetToEditorconfigConverter"/>
+        <PackageReference Include="Refit.HttpClientFactory"/>
+        <PackageReference Include="Refit.Newtonsoft.Json"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\IntelligentMonitoringSystem.Domain\IntelligentMonitoringSystem.Domain.csproj"/>
+    </ItemGroup>
+
+</Project>

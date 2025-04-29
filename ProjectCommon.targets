@@ -1,0 +1,43 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+
+        <!--目标框架-->
+        <TargetFramework>net8.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+
+        <!--Host配置 start -->
+
+        <!--GC模式-->
+        <!--资料1： 快速查看GC模式和不同配置的区别 "https://www.cnblogs.com/maxzhang1985/p/7836088.html"-->
+        <!--资料2：官方文档，详细了解GC "https://docs.microsoft.com/zh-cn/dotnet/standard/garbage-collection/fundamentals?redirectedfrom=MSDN"-->
+        <!--true为Server模式,false为工作站模式-->
+        <ServerGarbageCollection>false</ServerGarbageCollection>
+
+        <!--GC专用线程模式-->
+        <!--false为使用后台专用GC线程，true使用并行专用GC线程-->
+        <!--资料:"https://docs.microsoft.com/zh-cn/dotnet/standard/garbage-collection/fundamentals#background-workstation-garbage-collection"-->
+        <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
+
+        <!--保留VM垃圾回收-->
+        <!--true:将应删除的段放在备用列表中以备将来使用，而不是将其释放回操作系统-->
+        <!--资料："https://github.com/dotnet/coreclr/blob/v2.2.0/Documentation/project-docs/clr-configuration-knobs.md"-->
+        <RetainVMGarbageCollection>false</RetainVMGarbageCollection>
+
+        <!--分层编译-->
+        <!--资料：" https://devblogs.microsoft.com/dotnet/tiered-compilation-preview-in-net-core-2-1/"-->
+        <!--资料2：https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-core-2-2#jit-compiler-improvements-->
+        <!--在2.2中分层编译仍然是可选可能，在3.0中才默认开启-->
+        <TieredCompilation>false</TieredCompilation>
+
+        <!--全球化支持-->
+        <!--false:修剪掉全球化的依赖和包占用，但会缺失许多全球化支持，不建议关闭-->
+        <!--资料："https://natemcmaster.com/blog/2019/01/09/netcore-primitives-3/"-->
+        <InvariantGlobalization>false</InvariantGlobalization>
+
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <AnalysisLevel>latest</AnalysisLevel>
+        <!--<CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>-->
+    </PropertyGroup>
+
+</Project>

@@ -1,0 +1,40 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: intelligentmonitoringsystem-background
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: intelligentmonitoringsystem-background
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: intelligentmonitoringsystem-background
+    spec:
+      nodeName: master01
+      containers:
+        - name: intelligentmonitoringsystem-background
+          image: ${ImageName}
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "1000Mi"
+              cpu: "3000m"
+          ports:
+            - containerPort: 8080
+          env:
+            - name: "ASPNETCORE_URLS"
+              value: "http://*:8080"
+            - name: "ASPNETCORE_ENVIRONMENT"
+              value: "Staging"
+      

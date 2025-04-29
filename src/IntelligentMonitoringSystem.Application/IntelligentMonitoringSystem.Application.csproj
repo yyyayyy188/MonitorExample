@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <!--引用解决方案公用项目配置-->
+    <PropertyGroup>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <Import Project="../../ProjectCommon.targets"/>
+    <ItemGroup>
+        <ProjectReference Include="..\IntelligentMonitoringSystem.Application.Shared\IntelligentMonitoringSystem.Application.Shared.csproj"/>
+        <ProjectReference Include="..\IntelligentMonitoringSystem.Domain\IntelligentMonitoringSystem.Domain.csproj"/>
+        <ProjectReference Include="..\IntelligentMonitoringSystem.Infrastructure.Dapper\IntelligentMonitoringSystem.Infrastructure.Dapper.csproj"/>
+        <ProjectReference Include="..\IntelligentMonitoringSystem.Infrastructure.Reference\IntelligentMonitoringSystem.Infrastructure.Reference.csproj"/>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection"/>
+        <PackageReference Include="DotPulsar"/>
+        <PackageReference Include="Microsoft.CodeAnalysis.RulesetToEditorconfigConverter"/>
+        <PackageReference Include="MiniExcel"/>
+        <PackageReference Include="FluentValidation"/>
+        <PackageReference Include="System.Text.Json"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Remove="MessageCenters\MessageDataResolvers\Impl\AbnormalEnterMessageDataResolverProvider.cs"/>
+    </ItemGroup>
+
+    <PropertyGroup>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+</Project>

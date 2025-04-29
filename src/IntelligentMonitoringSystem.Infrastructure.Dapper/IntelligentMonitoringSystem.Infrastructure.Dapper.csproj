@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <!--引用解决方案公用项目配置-->
+    <PropertyGroup>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <Import Project="../../ProjectCommon.targets"/>
+    <ItemGroup>
+        <ProjectReference Include="..\IntelligentMonitoringSystem.Domain\IntelligentMonitoringSystem.Domain.csproj"/>
+        <ProjectReference Include="..\IntelligentMonitoringSystem.Infrastructure.Common\IntelligentMonitoringSystem.Infrastructure.Common.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Ardalis.GuardClauses"/>
+        <PackageReference Include="Ardalis.SmartEnum.Dapper"/>
+        <PackageReference Include="Dapper"/>
+        <PackageReference Include="Microsoft.CodeAnalysis.RulesetToEditorconfigConverter"/>
+        <PackageReference Include="MySqlConnector"/>
+        <PackageReference Include="MySqlConnector.Logging.Serilog"/>
+        <PackageReference Include="Swashbuckle.AspNetCore"/>
+        <PackageReference Include="MiniProfiler.AspNetCore.Mvc"/>
+        <PackageReference Include="System.Text.Json"/>
+    </ItemGroup>
+</Project>

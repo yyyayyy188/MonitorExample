@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    </PropertyGroup>
+    <!--引用解决方案公用项目配置-->
+    <Import Project="../../ProjectCommon.targets"/>
+
+    <ItemGroup>
+        <PackageReference Include="FFMpegCore"/>
+        <PackageReference Include="Microsoft.CodeAnalysis.RulesetToEditorconfigConverter"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\IntelligentMonitoringSystem.Domain\IntelligentMonitoringSystem.Domain.csproj"/>
+    </ItemGroup>
+
+
+</Project>

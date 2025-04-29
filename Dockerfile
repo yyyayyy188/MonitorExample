@@ -1,0 +1,35 @@
+﻿FROM registry.cmcc.com/library/dotnet/aspnet:8.0 AS base
+USER root
+WORKDIR /app
+EXPOSE 8080
+
+ENV TZ=Asia/Shanghai
+
+FROM registry.cmcc.com/library/dotnet/sdk:8.0 AS build
+ARG BUILD_CONFIGURATION=Release
+WORKDIR /src
+
+COPY ["src/IntelligentMonitoringSystem.WebApi/IntelligentMonitoringSystem.WebApi.csproj", "src/IntelligentMonitoringSystem.WebApi/"]
+COPY ["src/IntelligentMonitoringSystem.Application/IntelligentMonitoringSystem.Application.csproj", "src/IntelligentMonitoringSystem.Application/"]
+COPY ["src/IntelligentMonitoringSystem.Application.Shared/IntelligentMonitoringSystem.Application.Shared.csproj", "src/IntelligentMonitoringSystem.Application.Shared/"]
+COPY ["src/IntelligentMonitoringSystem.Domain/IntelligentMonitoringSystem.Domain.csproj", "src/IntelligentMonitoringSystem.Domain/"]
+COPY ["src/IntelligentMonitoringSystem.Domain.Shared/IntelligentMonitoringSystem.Domain.Shared.csproj", "src/IntelligentMonitoringSystem.Domain.Shared/"]
+COPY ["src/IntelligentMonitoringSystem.Infrastructure.Dapper/IntelligentMonitoringSystem.Infrastructure.Dapper.csproj", "src/IntelligentMonitoringSystem.Infrastructure.Dapper/"]
+COPY ["src/IntelligentMonitoringSystem.Infrastructure.Common/IntelligentMonitoringSystem.Infrastructure.Common.csproj", "src/IntelligentMonitoringSystem.Infrastructure.Common/"]
+COPY ["src/IntelligentMonitoringSystem.Infrastructure.Reference/IntelligentMonitoringSystem.Infrastructure.Reference.csproj", "src/IntelligentMonitoringSystem.Infrastructure.Reference/"]
+COPY ["src/IntelligentMonitoringSystem.Infrastructure.EntityFrameworkCore/IntelligentMonitoringSystem.Infrastructure.EntityFrameworkCore.csproj", "src/IntelligentMonitoringSystem.Infrastructure.EntityFrameworkCore/"]
+COPY ["src/IntelligentMonitoringSystem.Infrastructure/IntelligentMonitoringSystem.Infrastructure.csproj", "src/IntelligentMonitoringSystem.Infrastructure/"]
+COPY ["src/IntelligentMonitoringSystem.Infrastructure.Pulsar/IntelligentMonitoringSystem.Infrastructure.Pulsar.csproj", "src/IntelligentMonitoringSystem.Infrastructure.Pulsar/"]
+RUN dotnet restore /p:TargetFramework=net8.0  "src/IntelligentMonitoringSystem.WebApi/IntelligentMonitoringSystem.WebApi.csproj"
+COPY . .
+WORKDIR "/src/src/IntelligentMonitoringSystem.WebApi"
+RUN dotnet build /p:TargetFramework=net8.0  "IntelligentMonitoringSystem.WebApi.csproj" -c $BUILD_CONFIGURATION -o /app/build
+
+FROM build AS publish
+ARG BUILD_CONFIGURATION=Release
+RUN dotnet publish /p:TargetFramework=net8.0  "IntelligentMonitoringSystem.WebApi.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "IntelligentMonitoringSystem.WebApi.dll"]

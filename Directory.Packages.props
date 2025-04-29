@@ -1,0 +1,56 @@
+<!-- For more info on central package management go to https://devblogs.microsoft.com/nuget/introducing-central-package-management/ -->
+<Project>
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageVersion Include="Ardalis.SmartEnum.Dapper" Version="8.1.0"/>
+        <PackageVersion Include="Ardalis.SmartEnum.EFCore" Version="8.1.0"/>
+        <PackageVersion Include="Ardalis.Specification.EntityFrameworkCore" Version="8.0.0"/>
+        <PackageVersion Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1"/>
+        <PackageVersion Include="Consul.AspNetCore" Version="1.7.14.6"/>
+        <PackageVersion Include="Coravel" Version="6.0.0"/>
+        <PackageVersion Include="Dapper" Version="2.1.35"/>
+        <PackageVersion Include="DotPulsar" Version="3.5.0"/>
+        <PackageVersion Include="FFMpegCore" Version="5.1.0"/>
+        <PackageVersion Include="FluentValidation" Version="11.11.0"/>
+        <PackageVersion Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0"/>
+        <PackageVersion Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.11"/>
+        <PackageVersion Include="Microsoft.CodeAnalysis.RulesetToEditorconfigConverter" Version="3.3.3"/>
+        <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.11"/>
+        <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2"/>
+        <PackageVersion Include="MiniExcel" Version="1.35.0"/>
+        <PackageVersion Include="MiniProfiler.AspNetCore.Mvc" Version="4.5.4"/>
+        <PackageVersion Include="MiniProfiler.EntityFrameworkCore" Version="4.5.4"/>
+        <PackageVersion Include="MiniProfiler.Providers.MySql" Version="4.5.4"/>
+        <PackageVersion Include="MySqlConnector" Version="2.4.0"/>
+        <PackageVersion Include="MySqlConnector.Logging.Serilog" Version="2.0.0"/>
+        <PackageVersion Include="NewId" Version="4.0.1"/>
+        <PackageVersion Include="Newtonsoft.Json" Version="13.0.3"/>
+        <PackageVersion Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2"/>
+        <PackageVersion Include="Pomelo.EntityFrameworkCore.MySql.Design" Version="1.1.2"/>
+        <PackageVersion Include="Refit.HttpClientFactory" Version="8.0.0"/>
+        <PackageVersion Include="Refit.Newtonsoft.Json" Version="8.0.0"/>
+        <PackageVersion Include="StackExchange.Redis" Version="2.8.0"/>
+        <PackageVersion Include="StyleCop.Analyzers" Version="1.1.118"/>
+        <PackageVersion Include="Swashbuckle.AspNetCore" Version="7.0.0"/>
+        <PackageVersion Include="MediatR" Version="12.4.1"/>
+        <PackageVersion Include="Ardalis.GuardClauses" Version="5.0.0"/>
+        <PackageVersion Include="Ardalis.SmartEnum" Version="8.1.0"/>
+        <PackageVersion Include="Ardalis.SmartEnum.JsonNet" Version="8.1.0"/>
+        <PackageVersion Include="AutoMapper" Version="13.0.1"/>
+        <PackageVersion Include="Serilog.AspNetCore" Version="8.0.3"/>
+        <PackageVersion Include="Serilog.Expressions" Version="5.0.0"/>
+        <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.11">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageVersion>
+        <PackageVersion Include="System.Linq.Dynamic.Core" Version="1.4.9"/>
+        <PackageVersion Include="System.Net.Http" Version="4.3.4"/>
+        <PackageVersion Include="System.Text.Json" Version="8.0.5"/>
+        <PackageVersion Include="System.Text.RegularExpressions" Version="4.3.1"/>
+        <PackageVersion Include="Winton.Extensions.Configuration.Consul" Version="3.4.0"/>
+        <PackageVersion Include="ZiggyCreatures.FusionCache" Version="1.4.1"/>
+        <PackageVersion Include="ZiggyCreatures.FusionCache.Serialization.NewtonsoftJson" Version="1.4.1"/>
+    </ItemGroup>
+</Project>

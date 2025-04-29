@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <!--引用解决方案公用项目配置-->
+    <PropertyGroup>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <Import Project="../../ProjectCommon.targets"/>
+    <ItemGroup>
+        <ProjectReference Include="..\IntelligentMonitoringSystem.Domain\IntelligentMonitoringSystem.Domain.csproj"/>
+        <ProjectReference Include="..\IntelligentMonitoringSystem.Infrastructure.Dapper\IntelligentMonitoringSystem.Infrastructure.Dapper.csproj"/>
+        <ProjectReference Include="..\IntelligentMonitoringSystem.Infrastructure.EntityFrameworkCore\IntelligentMonitoringSystem.Infrastructure.EntityFrameworkCore.csproj"/>
+        <ProjectReference Include="..\IntelligentMonitoringSystem.Infrastructure.FFMpeg\IntelligentMonitoringSystem.Infrastructure.FFMpeg.csproj"/>
+        <ProjectReference Include="..\IntelligentMonitoringSystem.Infrastructure.Pulsar\IntelligentMonitoringSystem.Infrastructure.Pulsar.csproj"/>
+        <ProjectReference Include="..\IntelligentMonitoringSystem.Infrastructure.Redis\IntelligentMonitoringSystem.Infrastructure.Redis.csproj"/>
+        <ProjectReference Include="..\IntelligentMonitoringSystem.Infrastructure.Reference\IntelligentMonitoringSystem.Infrastructure.Reference.csproj"/>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.CodeAnalysis.RulesetToEditorconfigConverter"/>
+    </ItemGroup>
+</Project>
